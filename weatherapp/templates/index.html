@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Weather {% endblock %}
+
+{% block content %}
+
+
+
+
+    <!-- <h1 class="text-center mt-5">Погода</h1> -->
+    {% for city in cities %}
+    <div class="container">
+
+        <!-- <h1 class="text-center mt-5">Погода</h1> -->
+    
+        <!-- <form action="/search/" method="POST" class="input-group mb-3 mt-5">
+            {% csrf_token %}
+            <input type="text" class="form-control" placeholder="Называния города" aria-label="Recipient's username" aria-describedby="button-addon2"  name="city">
+            <button class="btn btn-outline-secondary" type="sumbit" id="button-addon2">Поиск</button>
+          </form> -->
+          
+              <!-- {{data}}  -->
+                <div style="display: flex;">
+                    <!-- <div>
+                        <img src="{{weather}}" alt="">
+                    </div> -->
+                    <div>
+                        <h1 style="margin-left: 250px;" class="mt-5">Прогноз погода в городе: {{city}}</h1>
+                        <h6 style="margin-left: 150px;">Температура в городе {{city}} : {{city.temperature}} °C в {{city.sent_at}}</h6>
+                        <img src="{{ city.image }}" alt="">
+                        <!-- <h6 style="margin-left: 150px;">Ощущается в городе {{city}} :{{feels_like}} °C</h6>
+                        <h6 style="margin-left: 150px;">Минимальное температура в городе {{city}} :{{temp_min}} °C</h6>
+                        <h6 style="margin-left: 150px;">Махсимальное температура в городе {{city}} :{{temp_max}} °C</h6> -->
+                    </div> 
+                    <!-- <div>
+                        <h3 style="margin-left: 200px;">Страна:  {{sys}}</h3>
+                        <h3 style="margin-left: 200px;">Облачность: {{clouds}} %</h3>
+                    </div>    -->
+                </div>
+    </div>  
+{% endfor %}
+{% endblock %}
